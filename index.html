@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<link rel="stylesheet" href="bower_components/angular/" />-->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+    <script src="scripts/worker.js"></script>
+    <title>MithUIV1.0</title>
+</head>
+<!--Do the progress bar -->
+<body>
+    <div class="app">
+        <!--This tab is our app, for more detail about how each tab is construct, look for the function in CSS file-->
+        <div class="up-player">
+            <div class="nav-bar">
+                <!--Search + Playlist -->
+                <div class="playlist">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </div>
+                <div class="search">
+                    <!--<input type="text" name="search" placeholder="Search.." value="&#xf002;">-->
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="up-mp">
+                <!--Repeat + Song title + Sound-->
+                <div class="repeat-b">
+                    <i class="fa fa-repeat" aria-hidden="true"></i>
+                </div>
+                <div class="title">
+                    <!--<p> Song's name </p>
+                    <p> Artist's name </p>-->
+                    <div id="details"></div>
+                </div>
+                <div class="sound-b">
+                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="progress-b">
+                <!--Progress bar-->
+            </div>
+            <div class="down-mp">
+                <!--Audio control-->
+                <div class="prev-b">
+                    <i class="fa fa-step-backward" aria-hidden="true"></i>
+                </div>
+                <div class="pause-b">
+                    <i class="fa fa-pause" aria-hidden="true"></i>
+                </div>
+                <div class="next-b">
+                    <i class="fa fa-step-forward" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="song-list">
+            <!--Song list-->
+            <p> Song list </p>
+            <ul id="select-demo"    style="overflow:scroll; height:250px;"></ul>
+        </div>
+        
+    </div>
+    <div class="side-menu">
+    </div>
+    <div class="side-menu">
+        <a href="#" class="close"><i class="fa fa-angle-left"></i></a>
+        <ul>
+            <li><a href="#" class="side-home"><i class="fa fa-home"></i> Home </a></li>
+            <li class="active"><a href="#" class="side-currently-playing"><i class="fa fa-headphones fa-fw"></i> Currently Playing</a></li>
+            <li><a href="#" class="side-your-playlist"><i class="fa fa-music fa-fw"></i> Your Playlists</a></li>
+            <li><a href="#" class="side-sleep-timer"><i class="fa fa-clock-o fa-fw"></i> Sleep timer </a></li>
+            <li><a href="#" class="side-theme"><i class="fa fa-paint-brush fa-fw"></i> Customize theme </a></li>
+            <li><a href="#" class="side-your-profile"><i class="fa fa-user fa-fw"></i> About </a></li>
+        </ul>
+        <div class="side-menu-background"></div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
+</html>
