@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <!--
@@ -18,78 +18,123 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!--<link rel="stylesheet" href="bower_components/angular/" />-->
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/ache_regular_macroman/stylesheet.css" />
+    <link rel="stylesheet" href="bower_components/sofiapro-light-macroman/stylesheet.css" />
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
     <script src="scripts/worker.js"></script>
     <title>MithUIV1.0</title>
 </head>
 <!--Do the progress bar -->
 <body>
-    <div class="app">
-        <!--This tab is our app, for more detail about how each tab is construct, look for the function in CSS file-->
-        <div class="up-player">
-            <div class="nav-bar">
-                <!--Search + Playlist -->
-                <div class="playlist">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </div>
-                <div class="search">
-                    <!--<input type="text" name="search" placeholder="Search.." value="&#xf002;">-->
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="up-mp">
-                <!--Repeat + Song title + Sound-->
-                <div class="repeat-b">
-                    <i class="fa fa-repeat" aria-hidden="true"></i>
-                </div>
-                <div class="title">
-                    <!--<p> Song's name </p>
-                    <p> Artist's name </p>-->
-                    <div id="details"></div>
-                </div>
-                <div class="sound-b">
-                    <i class="fa fa-volume-up" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="progress-b">
-                <!--Progress bar-->
-            </div>
-            <div class="down-mp">
-                <!--Audio control-->
-                <div class="prev-b">
-                    <i class="fa fa-step-backward" aria-hidden="true"></i>
-                </div>
-                <div class="pause-b">
-                    <i class="fa fa-pause" aria-hidden="true"></i>
-                </div>
-                <div class="next-b">
-                    <i class="fa fa-step-forward" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
-        <div class="song-list">
-            <!--Song list-->
-            <p> Song list </p>
-            <ul id="select-demo"    style="overflow:scroll; height:250px;"></ul>
-        </div>
-        
-    </div>
-    <div class="side-menu">
-    </div>
-    <div class="side-menu">
-        <a href="#" class="close"><i class="fa fa-angle-left"></i></a>
-        <ul>
-            <li><a href="#" class="side-home"><i class="fa fa-home"></i> Home </a></li>
-            <li class="active"><a href="#" class="side-currently-playing"><i class="fa fa-headphones fa-fw"></i> Currently Playing</a></li>
-            <li><a href="#" class="side-your-playlist"><i class="fa fa-music fa-fw"></i> Your Playlists</a></li>
-            <li><a href="#" class="side-sleep-timer"><i class="fa fa-clock-o fa-fw"></i> Sleep timer </a></li>
-            <li><a href="#" class="side-theme"><i class="fa fa-paint-brush fa-fw"></i> Customize theme </a></li>
-            <li><a href="#" class="side-your-profile"><i class="fa fa-user fa-fw"></i> About </a></li>
-        </ul>
-        <div class="side-menu-background"></div>
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-    <script type="text/javascript" src="scripts/index.js"></script>
+	<div id="app">
+		<div id="mp">
+			<div id="nav-bar">
+				<div class="container">
+					<div class="row">
+						<div class="col-2" style="padding-top: 5px">
+							<i class="fa fa-bars" aria-hidden="true" id="hambuger" style="z-index: 0; position: absolute"></i>
+						</div>
+						<!-- Sidebar Links -->
+						<div class="col-8"></div>
+						<div class="col-2">
+							<i class="fa fa-search float-right" aria-hidden="true" id="search-button"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="up-mp">
+				<div class="container">
+					<div class="row">
+						<div class="col-2"></div>
+						<div class="col-8" id="song-name">Giup em tra loi nhung cau hoi</div>
+						<div class="col-2"></div>
+
+					</div>
+					<div class="row">
+						<div class="col-2" id="func-b">
+							<i class="fa fa-repeat float-left" aria-hidden="true"></i>
+						</div>
+						<div class="col-8" id="artist-name">Artist</div>
+						<div class="col-2" id="func-b">
+							<i class="fa fa-volume-up float-right" aria-hidden="true"></i>
+						</div>
+
+					</div>					
+				</div>
+			</div>
+			<div id="p">
+				<div class="container">
+					<div class="row">
+						<div class="col-1"></div>
+						<div class="col-10">
+							<div class="progress">
+								<div class="progress-b"></div>
+							</div>
+						</div>
+						<div class="col-1"></div>
+					</div>
+				</div>
+			</div>
+			<div id="down-mp">
+				<div class="container">
+					<div class="row">
+						<div class="col-4" style="padding-top: 40px">
+							<i class="fa fa-step-backward float-right" aria-hidden="true" ></i>
+						</div>
+						<div class="col-4" style="padding-top:32px"> 
+							<div class="play_btn text-center" id="play" data-action='play'>
+								<span class="fa fa-play float-none" id="play_circle" aria-hidden="true"></span>
+							</div>
+						</div>
+						<div class="col-4" style="padding-top: 40px">
+							<i class="fa fa-step-forward float-left" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="song-list">
+			<div class="container">
+				<div class="row">
+					<div class="col-12" id="list-song"> Playlist </div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<p> Title </p>
+						<p> Artist </p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<p> Title </p>
+						<p> Artist </p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<p> Title </p>
+						<p> Artist </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="side-menu">
+	</div>
+	<div class="side-menu">
+		<a href="#" class="close"><i class="fa fa-angle-left"></i></a>
+		<ul>
+			<li><a href="#" class="side-home"><i class="fa fa-home"></i> Home </a></li>
+			<li class="active"><a href="#" class="side-currently-playing"><i class="fa fa-headphones fa-fw"></i> Currently Playing</a></li>
+			<li><a href="#" class="side-your-playlist"><i class="fa fa-music fa-fw"></i> Your Playlists</a></li>
+			<li><a href="#" class="side-sleep-timer"><i class="fa fa-clock-o fa-fw"></i> Sleep timer </a></li>
+			<li><a href="#" class="side-theme"><i class="fa fa-paint-brush fa-fw"></i> Customize theme </a></li>
+			<li><a href="#" class="side-your-profile"><i class="fa fa-user fa-fw"></i> About </a></li>
+		</ul>
+		<div class="side-menu-background"></div>
+	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="scripts/platformOverrides.js"></script>
+	<script type="text/javascript" src="scripts/index.js"></script>
 </body>
 </html>
