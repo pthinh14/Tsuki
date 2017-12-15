@@ -1,162 +1,71 @@
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-}
-
-
 body {
-    color:antiquewhite;
-    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-family: 'RobotoRegular', 'Droid Sans', 'Segoe UI', Segoe, 'San Francisco', 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
-    font-size: 12px;
 }
 
-
-.app {
+#app {
     color: antiquewhite;
-    z-index: 1;
-    position: absolute;
+    position: fixed;
+    z-index: 0;
+    width: 100%;
     height: 100%;
-    width: 100%;
 }
 
-    .app .up-player {
-        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../images/BTSBackground.jpg) center bottom no-repeat;
-        background-size: contain cover;
-        height: 65%;
-        width: 100%;
-    }
-    .app .nav-bar {
-        height: 15%;
-        width: 100%;
-    }
-
-        .app .nav-bar .playlist {
-            padding-left: 10px;
-            width: 20%;
-            float: left;
-            cursor: pointer;
-            font-size: 30px;
-            display: inline-block;
-        }
-
-        .app .nav-bar .search {
-            padding-right: 10px;
-            padding-left: 30px;
-            width: 20%;
-            float: right;
-            cursor: pointer;
-            font-size: 30px;
-            display: inline-block;
-        }
-/*Search animation*/
-input[type=text] {
-    width: 20%;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    font-family: FontAwesome;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-    float: right;
-}
-    /* When the input field gets focus, change its width to 100% */
-    input[type=text]:focus {
-        width: 80%;
-    }
-
-.app .up-mp {
-    height: 55%;
-    width: 100%;
-    display: flex;
-    align-items: center;
+#nav-bar {
+    font-size: 30px;
 }
 
-    .app .up-mp .repeat-b {
-        width: 20%;
-        height: 100%;
-        display: inline-block;
-        cursor: pointer;
-        font-size: 20px;
-        padding-top: 150px;
-        padding-left: 20px;
-        text-align: right;
-        //float: left;
-    }
-
-    .app .up-mp .title {
-        width: 60%;
-        height: 100%;
-        display: inline-block;
-        font-size: 17px;
-        font-weight: 400;
-        align-content: center;
-    }
-
-    .app .up-mp .sound-b {
-        width: 20%;
-        height: 100%;
-        display: inline-block;
-        cursor: pointer;
-        font-size: 20px;
-        padding-top: 150px;
-        padding-right: 20px;
-        //float: left;
-    }
-
-.app .progress-b {
-    height: 2px;
-    margin: 40px 30px 0px 20px;
-    background: rgba(255, 255, 255, 0.3);
+#up-mp {
+    font-size: 20px;
+    padding-top: 30px;
 }
 
-.app .down-mp {
-    height: 30%;
-    width: 100%;
-    display: flex;
-    align-items: center;
+#func-b {
 }
 
-    .app .down-mp .prev-b {
-        height: 100%;
-        width: 30%;
-        display: inline-block;
-        cursor: pointer;
-        font-size: 30px;
-        padding-left: 30px;
-        text-align: right;
-    }
+#down-mp {
+    font-size: 32px;
+}
 
-    .app .down-mp .pause-b {
-        height: 100%;
-        width: 40%;
-        display: inline-block;
-        cursor: pointer;
-        font-size: 30px;
-        padding-left: 20px;
-        padding-right: 20px;
-        text-align: center;
-    }
-
-    .app .down-mp .next-b {
-        height: 100%;
-        width: 30%;
-        display: inline-block;
-        cursor: pointer;
-        font-size: 30px;
-        padding-right: 30px;
-    }
-
-.app .song-list {
-    height: 45%;
-    width: 100%;
-    display: flex;
-    color: antiquewhite;
-    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), center bottom no-repeat;
+#mp {
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(../images/moon-boat-night.jpg) center bottom no-repeat;
     background-size: contain cover;
 }
+#search-button{
+	align: right;
+}
+img{ 
+display: inline-block; }
+#song-name{
+	margin: auto; 
+	text-align: center; 
+	padding-bottom: 40px; 
+	padding-top: 50px
+	font-size: 20px;
+    font-family: sofiapro-light;
+}
+#artist-name{
+	margin: auto; 
+	text-align: center;
+	font-size: 15px;
+	padding-bottom: 20px;
+    font-family: 
+}
+.progress-b{
+    margin: auto;
+    width:20%; 
+    height:5px;
+}
+#song-list {
+    background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)), center bottom no-repeat;
+}
 
+#list-song {
+    font-family: sofiapro-light;
+    -webkit-text-stroke: 1px;
+    color: palegoldenrod;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 24px;
+}
 
 div.side-menu {
     width: 100%;
@@ -164,7 +73,7 @@ div.side-menu {
     position: absolute;
     background: #333;
     z-index: 98;
-    margin-left: -400px;
+    margin-left: -10000px;
 }
 
 div.side-menu-background {
